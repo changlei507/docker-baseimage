@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FIRST_BOOT_FILES=/etc/first_boot.d
+FIRST_BOOT_INDICATOR=/var/run/first_boot
+
+run_directory() {
+  for path in $1/*; do
+    if [[ -f $path && -x $path ]]; then
+      $path
+    fi
+  done
+}
+
+if [[ -e $FIRST_BOOT_INDICATOR ]]; then
+  run_directory $FIRST_BOOT_FILES
+  rm $FIRST_BOOT_INDICATOR
+fi
