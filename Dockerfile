@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get dist-upgrade -y --no-install-recommends && \
+    apt-get install inotify-tools -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
