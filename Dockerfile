@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.12
+FROM phusion/baseimage:0.9.15
 
 MAINTAINER Mathias Hertlein
 
